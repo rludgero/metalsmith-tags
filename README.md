@@ -35,9 +35,6 @@ You can use different handle for the tags, by configuring the `handle` option. `
       "handle": "tags",
       "path": "topics/:tag.html",
       "layout": "/partials/tag.hbt",
-      /* Can also use deprecated template property.
-      "template": "/partials/tag.hbt",
-      */
       "sortBy": "date",
       "reverse": true,
       "skipMetadata": false,
@@ -63,11 +60,10 @@ metalsmith
     // path for result pages
     path:'topics/:tag.html',
     // layout to use for tag listing
+    // only use this option if you use the `metalsmith-layouts` plugin.
     layout:'/partials/tag.hbt',
-    // Can also use `template` property for use with the (deprecated)
-    // metalsmith-templates plugin. The `template` property is deprecated here
-    // as well but still available for use.
-    // template:'/partials/tag.hbt',
+    // only use this option if you use the `metalsmith-in-place` plugin with templating language that supports inheritance (like nunjucks or pug).
+    contents: Buffer.from('{% extends "./layouts/blog-tag-list.njk" %}'),
     // provide posts sorted by 'date' (optional)
     sortBy: 'date',
     // sort direction (optional)
@@ -108,9 +104,6 @@ metalsmith
   "pathPage": "topics/:tag/:num/index.html",
   "perPage": 6,
   "layout": "/partials/tag.hbt",
-  /* Can also use deprecated template property.
-  "template": "/partials/tag.hbt",
-  */
   "sortBy": "date",
   "reverse": true,
   "skipMetadata": false,
