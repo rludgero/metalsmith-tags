@@ -1,3 +1,8 @@
+<a name="2.1.0"></a>
+# 2.1.0
+
+* Feature: Enable `contents` property option to using templating language that supports inheritance (like nunjucks or pug).
+
 <a name="2.0.0"></a>
 # 2.0.0
 
